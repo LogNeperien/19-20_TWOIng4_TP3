@@ -29,4 +29,8 @@ class API_WEATHER{
   getHTMLElementFromIcon(icon){
     return `<img src=${API_URL_ICON}${icon}@2x.png class="weather-icon"/>`
   }
+  
+  getThreeDayForecast(){
+	return axios.get(`${API_URL}?q=${this.city}&cnt=4&units=metric&appid=${API_KEY}`, {crossdomain: true})
+  }
 }
