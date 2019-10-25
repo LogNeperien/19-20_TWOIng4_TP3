@@ -20,7 +20,7 @@
     <!-- Axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-  <body>
+  <body onload="start()">
     <div
       class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
@@ -38,6 +38,7 @@
       <div class="input-group mb-5 offset-4 col-4">
         <input id="city-input" type="text" class="form-control" placeholder="Rentrer le nom d'une ville">
         <div class="input-group-append">
+	<!-- BOUTON POUR LA VILLE	 -->
           <button id="city-input-button" class="btn btn-success" type="submit">Actualiser</button>
         </div>
       </div>
@@ -57,9 +58,10 @@
                 <div id="icon-weather-container" ></div>
                 <h3 id="today-forecast-temp"> </h3>
               </div>
+			  <!-- 	A CHANGER LE ONCLICK 
               <button type="button" class="btn btn-lg btn-block btn-primary button-load-forecast" onclick='start()'>
                 Quel temps fait'il aujourd'hui ?
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
@@ -110,6 +112,7 @@
         </div>
       </div>
     </div>
+	<!--est ce que je dois mettres les scipts en premier pour avoir les predictions directement ? -->
     <script src="js/API_Weather.js"></script>
     <script src="js/script.js"></script>
   </body>
