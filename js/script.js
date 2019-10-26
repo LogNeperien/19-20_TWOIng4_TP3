@@ -44,10 +44,10 @@ function start() {
       const data = response.data;
 		
 		//on récupère les données par classe
-	  tabMain = document.getElementsByClassName('mainHTML');
-      tabDescription = document.getElementsByClassName('descriptionHTML');
-      tabIcon = document.getElementsByClassName('iconHTML');
-      tabTemp = document.getElementsByClassName('tempHTML');
+	  tabMain = document.getElementsByClassName('mainMETEO');
+      tabDescription = document.getElementsByClassName('descriptionMETEO');
+      tabIcon = document.getElementsByClassName('iconMETEO');
+      tabTemp = document.getElementsByClassName('tempMETEO');
 		
 		
 		//on fait une boucle pour 3 jours 
