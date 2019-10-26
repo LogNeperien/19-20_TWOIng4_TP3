@@ -43,18 +43,21 @@ function start() {
 	  // Récupère la donnée d'une API
       const data = response.data;
 		
+		//on récupère les données par classe
+	  tabMain = document.getElementsByClassName('mainHTML');
+      tabDescription = document.getElementsByClassName('descriptionHTML');
+      tabIcon = document.getElementsByClassName('iconHTML');
+      tabTemp = document.getElementsByClassName('tempHTML');
 		
+		
+		//on fait une boucle pour 3 jours 
 	  for(let jour = 0; jour<3; jour++)
 	  {
-		const main = data.weather[jour].main;
-		const description = data.weather[jour].description;
-		const temp = data.main.temp;
-		const icon = apiWeather.getHTMLElementFromIcon(data.weather[jour].icon);
-	  
-		document.getElementById(`${jour+1}-forecast-main`).innerHTML = main;
-		document.getElementById(`${jour+1}-forecast-more-info`).innerHTML = description;
-		document.getElementById(`${jour+1}-icon-weather-container`).innerHTML = icon;
-		document.getElementById(`${jour+1}-forecast-temp`).innerHTML = `${temp}°C`; 
+		tabMain[jour].innerHTML = data.list[jour + 1].weather[0].main;
+        tabDescription[jour].innerHTML = data.list[jour + 1].weather[0].description;
+        tabIcon[jour].innerHTML = apiWeather.getHTMLElementFromIcon(data.list[jour + 1].weather[0].icon);
+        myTemp = data.list[jour + 1].temp.day;
+        tabTemp[jour].innerHTML = `${myTemp}°C`;
 		
 	  }
 	})

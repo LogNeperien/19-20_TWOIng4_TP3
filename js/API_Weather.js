@@ -4,8 +4,11 @@
 const API_KEY = "4081444b7b90198136fefe6ed4ccf35b";
 // Url API
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+// Url API 16 jours
+const API_URL_16_JOURS = "https://api.openweathermap.org/data/2.5/forecast/daily"
 // Base source icon
 const API_URL_ICON = "http://openweathermap.org/img/wn/";
+
 
 
 class API_WEATHER{
@@ -31,6 +34,8 @@ class API_WEATHER{
   }
   
   getThreeDayForecast(){
-	return axios.get(`${API_URL}?q=${this.city}&cnt=4&units=metric&appid=${API_KEY}`, {crossdomain: true})
+	return axios.get(`${API_URL_16_JOURS}?q=${this.city}&units=metric&appid=${API_KEY}&cnt=4`, {
+		crossdomain: true
+	})
   }
 }
